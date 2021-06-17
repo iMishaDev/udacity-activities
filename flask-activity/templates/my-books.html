@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="banner">
+    <h1> 
+        MyBooks | Udacity Activity
+    </h1>
+    <div>
+        <a class="btn cold" href="/add-book"> Add + </a>
+    </div>
+</div>
+<ul>
+    {%for book in books %}
+    <li>
+        <div class="book-title">
+            <h3> 
+                {{ book.title }} | {{ book.author }}
+            </h3>
+            {% if book.read == True %}
+            <div>
+                &#10003;
+            </div>
+            {% endif %}
+        </div>
+        <p>type, {{ book.type }} </p>
+        {% if book.read == False %}
+        <div class="book-actions">
+            <button class="btn success"> Read </button>
+            <button class="btn danger"> Delete </button>
+        </div>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
