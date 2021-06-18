@@ -175,3 +175,7 @@ li {
 a {
     text-decoration:underline !important;
 }
+
+.remove-btn {
+    cursor: pointer;
+}
