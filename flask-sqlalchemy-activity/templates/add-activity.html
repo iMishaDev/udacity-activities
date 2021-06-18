@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% block content %}
+    <div class="row m-auto add-workout h-100">
+        <form method="POST" id="add-workout-form" class="start-workout-form" action="/start-workout">
+                <ul class="workouts-list overflow-auto" onclick="startPause()">
+                    {% for workout in workouts %}
+                    <fieldset  onclick="select(this)" name="{{ workout.type }}" >
+                        <li class="workout" >
+                            <div class="activity-data">
+                                <div class="activity-icon">
+                                    <img width="50" src="{{workout.img}}" alt="workout" />
+                                </div>
+                                <div class="content-boc">
+                                    <div class="activity-type"> {{ workout.type }} </div>
+                                    <div class="activity-cals"> Open Goal </div>
+                                </div>
+                            </div>
+                        </li>
+                    </fieldset>
+                    {% endfor %}
+                </ul>
+
+                <div class="workout-start">
+                    <div>
+                        <img src="static/icons/walking.png" width="50" />
+                    </div>
+                    <div>
+                        <h1 class="time-text" id="output"> 00:00:00 </h1>
+                        <input type="hidden" id="totalTime-input" name="totalTime">
+                        <div class="d-flex align-items-center">
+                            <h2 id="active-cal"> 0 </h2> Active Cal
+                            <input type="hidden" id="activeCal-input" name="activeCal">
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <h2 id="total-cal"> 0 </h2> Total Cal
+                            <input type="hidden" id="totalCal-input" name="totalCal">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h4  class="heart-text"> <span id="heart"> 119 </span> BPM &#9829;</h4> 
+                            <input type="hidden" id="heart-input" name="heart">
+                            <img src="static/icons/remove.png" onclick="startPause()" width="40"  alt="delete" />
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+{% endblock %}

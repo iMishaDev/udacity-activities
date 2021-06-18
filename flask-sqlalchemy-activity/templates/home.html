@@ -1,0 +1,154 @@
+
+{% extends "main.html" %}
+{% block content %}
+    <div class="row m-5">
+        <div class="col-md-4 ">
+            <div class="p-5 d-flex  activity-overview">
+                <div class="w-50">
+                    <ul>
+                        <li>
+                            Move  <span class="move-text">  {{today.move}}/{{user.moveGoal}}CAL </span>
+                        </li>
+                        <li>
+                            Excercise   <span class="excercise-text">{{today.excercise}}/{{user.excersiceGoal}}MIN </span> 
+                        </li>
+                        <li>
+                            Stand <span class="stand-text"> {{today.stand}}/{{user.standGoal}}HRS </span> 
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bars-section w-50">
+                    <div class="bar-cont">
+                        <div>
+                            <div class="activity-bar move" style="height:{{percentages['move']}}%"> </div>
+                            <div>{{percentages['move']}}%</div>
+                        </div>
+                        
+                    </div>
+                    <div class="bar-cont">
+                        <div>
+                            <div class="activity-bar excercise" style="height:{{percentages['excercise']}}%"></div>
+                            <div>{{percentages['excercise']}}%</div>
+                        </div>
+                    </div>
+                
+                    <div class="bar-cont">
+                        <div>
+                            <div class="activity-bar stand" style="height:{{percentages['stand']}}%"> </div>
+                            <div>{{percentages['stand']}}%</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="profile">
+                <div class="profile-title">
+                    <img class="profile-icon " src="static/icons/user.svg" height="15" width="25" />
+                    <div> Athelte Details </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div> Name </div> <div> {{user.name}} </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div> Date of Birth </div> <div> {{user.dob}} </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>  Blod Type  </div> <div> {{user.blod}} </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>  Health Percentage   </div> <div> {{user.health}}% </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div>  Daily Water Consumption   </div> <div> {{user.water}}LIT </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    <div class="col-md-8">
+        <div class="activity-display">
+            <h2>Activity Viewer</h2>
+            <div class="activity-data">
+                    <div class="activity-icon">
+                        <img width="50" src="{{workout.icon}}" alt="workout" />
+                    </div>
+                    <div class="content-boc">
+                        <div class="activity-type"> {{ workout.type }} </div>
+                        <div class="activity-cals"> {{workout.activeCal}}Cal </div>
+                    </div>
+                    </div>
+
+                    <div>
+                        <div class="data-container ">
+                            <div class="activity-box">
+                                <div>
+                                    Total Time 
+                                </div>
+                                <div class="time-text">
+                                    {{ workout.totalTime }}
+                                </div>
+                            </div>
+
+                            <div class="activity-box">
+                                <div>
+                                    Active Calories
+                                </div>
+                                <div class="move-text">
+                                    {{workout.activeCal}}CAL
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                        <div class="data-container ">
+                            <div class="activity-box">
+                                <div>
+                                    Total Calories 
+                                </div>
+                                <div class="move-text">
+                                    {{workout.totalCal}}CAL
+                                </div>
+                            </div>
+
+                            <div class="activity-box">
+                                <div>
+                                    Avg Heart 
+                                </div>
+                                <div class="heart-text">
+                                    {{workout.heart}}BPM
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>
+                workouts
+            </h1>
+            <a class="excercise-text" href="/start-workout">start workout</a>
+        </div>
+        
+        <ul class="workouts-history overflow-auto">
+            {% for workout in workouts %}
+            <li class="workout">
+                <form onclick="show(this)" class="activity-data" method="GET" action="\{{workout.id}}">
+                    <div class="activity-icon">
+                        <img width="50" src="{{workout.icon}}" alt="workout" />
+                    </div>
+                    <div class="content-boc">
+                        <div class="activity-type"> {{ workout.type }} </div>
+                        <div class="activity-cals"> {{ workout.activeCal }}Cal </div>
+                    </div>
+                </form>
+                <div class="activity-date"> {{ workout.created_at  }} </div>
+            </li>
+            {% endfor %}
+        </ul>
+        
+    </div>    
+    </div>
+{% endblock  %}

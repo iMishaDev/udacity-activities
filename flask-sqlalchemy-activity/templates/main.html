@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>
+            Fitness
+        </title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="static/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+    <script>
+        let time = 0, running = 0 , activeCal = 0, totalCal = 0,heart = 70;
+
+        function startPause() {
+            if (running == 0) {
+                running = 1;
+                this.increment();
+            } else {
+                running = 0;
+                document.getElementById("add-workout-form").submit()
+            }
+        }
+
+        function reset(){
+            running = 0;
+            time = 0;
+            document.getElementById("output").innerHTML = "00:00:00";
+        }
+
+        function increment() {
+            if (running == 1) {
+                setTimeout(function() {
+                    time++;
+                    var mins = Math.floor(time/10/60);
+                    var secs = Math.floor(time/10 % 60);
+                    var tenths = time % 10;
+                    activeCal += 0.1;
+                    if (mins < 10) {
+                    mins = "0" + mins;
+                    } 
+                    if (secs < 10) {
+                    secs = "0" + secs;
+                    }
+                    heart = Math.floor(Math.random() * 180);
+                    document.getElementById("output").innerHTML = mins + ":" + secs + ":" + "0" + tenths;
+                    document.getElementById("active-cal").innerHTML = Math.floor(activeCal);
+                    document.getElementById("total-cal").innerHTML = Math.floor(activeCal);
+                    document.getElementById("heart").innerHTML = heart;
+                    document.getElementById("activeCal-input").value = Math.floor(activeCal);
+                    document.getElementById("totalCal-input").value = Math.floor(totalCal);
+                    document.getElementById("heart-input").value = heart;
+                    document.getElementById("totalTime-input").value =  mins + ":" + secs + ":" + "0" + tenths;
+                    increment();
+                },100);
+            }
+        }
+
+        function show(form){
+            form.submit()
+        }
+
+        function select(element) {
+            let input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "type");
+            input.setAttribute("value", element.name);
+            document.getElementById("add-workout-form").appendChild(input);
+        }
+
+    </script>
+</html>
