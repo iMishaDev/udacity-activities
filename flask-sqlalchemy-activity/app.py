@@ -5,7 +5,8 @@ from models import Competition, setup_db, Workout, User
 from sqlalchemy.orm import load_only, joinedload
 from datetime import date
 import math
-
+import timeago
+now = datetime.datetime.now() + datetime.timedelta(seconds=60 * 3.4)
 
 def get_sec(time_str):
     """Get Seconds from time."""
@@ -61,7 +62,7 @@ def getWorkouts(workout_id):
             "competitior_first_score": competition.competitior_first_score,
             "competitior_second_score": competition.competitior_second_score,
             "target": competition.target,
-            "end_date": competition.end_date
+            "end_date":  timeago.format(competition.end_date, now)
         }
         formatted_competitions.append(c)
     dailyActivities = getUserDailyActivities(user)
