@@ -157,6 +157,29 @@ body {
     padding: 10px;
 }
 
+.score {
+    color: #D1B000;
+}
+
+.remove-btn {
+    cursor: pointer;
+}
+
+.competition-container {
+    background: #d1b20011;
+    border-radius: 1rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.competitior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 120px;
+    width: 120px;
+}
 .list-group-item {
     display: flex !important;
     justify-content: space-between !important;
