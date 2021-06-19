@@ -1,3 +1,4 @@
+
 ## Udacity Activity Week.2
 
 this project is built as activity in for the Full Stack Nanodegree. Students are required to complete the requirments to build the backend of this app using flask & SQLAlchemy. the focus of this activity is to give students more practicing of the SQLAlchemy ORM Qeury API. 
@@ -170,8 +171,19 @@ what we are intrested to have for each workout is the icon representing the work
 - [ ] the user should be able to review the following in the home page : 
     - his workouts history
     - one workout details through the `workout viewer`. ( meaning that it's alway gonna be a workout to review, if the user didn't pick one.. you return the first one in the database by default)
-    - his competitions 
+    - his competitions ( not included in this version but you can check it out in the solution branch after you finish the one)
     - his personal data
     - his daily activity showing today's activity ( how much the user moved, exercised and stand ) along with the percentage of achivement based on the user daily goal. 
 
     so as you see it's a huge endpoint! but you can do it! use the Query API to fetch all those and return them in the home page. 
+    
+    
+    
+    this is how our app gonna look like if we apply our changes + the competition feature which is exist in the `solution` branch! 
+    ### the home page : 
+    ![Screen Shot 2021-06-19 at 2 03 47 PM](https://user-images.githubusercontent.com/12359091/122653271-46c57f00-d14c-11eb-850f-d40758b4ab5f.png)
+    
+    
+    
+    ### starting a workout page
+    ![Screen Shot 2021-06-19 at 2 24 21 PM](https://user-images.githubusercontent.com/12359091/122653273-488f4280-d14c-11eb-8849-e3be9e2e78df.png)
