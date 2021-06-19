@@ -75,16 +75,6 @@ class Workout(db.Model):
         }
 
 
-# class Friendship(db.Model):
-#     __tablename__ = 'friend'
-#     fk_user_from = db.Column(
-#         db.Integer, db.ForeignKey('user.id'), primary_key=True)
-#     fk_user_to = db.Column(
-#         db.Integer, db.ForeignKey('user.id'), primary_key=True)
-#     extra_field = db.Column(db.Integer)
-
-
-
 class Competition(db.Model):
     __tablename__ = 'competitions'
 
@@ -122,7 +112,7 @@ class Competition(db.Model):
             'competitior_second': self.competitior_second_id,
             'competitior_first_score': self.competitior_first_score,
             'competitior_second_score': self.competitior_second_score,
-            'end_date': self.end_date,
+            'end_date':  timeago.format(self.end_date, now),
             'target': self.target,
         }
 
@@ -131,14 +121,6 @@ class Competition(db.Model):
 User
 
 '''
-
-# class User (db.Model):
-#     __tablename__ = 'user'
-#     id = db.Column(db.Integer, primary_key=True)
-#     user_to = db.relationship(
-#         'Friendship', backref='to', primaryjoin=id == Friendship.fk_user_to)
-#     user_from = db.relationship(
-#         'Friendship', backref='from', primaryjoin=id == Friendship.fk_user_from)
 
 class User(db.Model):
     __tablename__ = 'users'
