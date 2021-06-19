@@ -36,7 +36,7 @@ now you can test the app and navigate through it to have an idea of how it works
 ### review 
 let's start with showing the project strucure : 
 .
-
+```
 +-- static
 |   +-- icons 
 |   +-- style.css
@@ -49,7 +49,7 @@ let's start with showing the project strucure :
 +-- requirements.py
 +-- seeder.py
 +-- README.md
-
+```
 let's go through the models and check what we have so far. starting with the `user` model:  
 
 ```
