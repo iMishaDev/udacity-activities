@@ -173,7 +173,15 @@ what we are intrested to have for each workout is the icon representing the work
     - one workout details through the `workout viewer`. ( meaning that it's alway gonna be a workout to review, if the user didn't pick one.. you return the first one in the database by default)
     - his competitions ( not included in this version but you can check it out in the solution branch after you finish the one)
     - his personal data
-    - his daily activity showing today's activity ( how much the user moved, exercised and stand ) along with the percentage of achivement based on the user daily goal. 
+    - his daily activity showing today's activity ( how much the user moved, exercised and stand ) along with the percentage of achivement based on the user daily goal. the frontend is expecting this structure : 
+
+    ```
+    dailyActivity = {
+        'move': {'cals', 0, 'percentage': 0},
+        'excercise': {'cals', 0, 'percentage': 0}
+        'stand': {'cals', 0, 'percentage': 0}
+    }
+    ```
 
     so as you see it's a huge endpoint! but you can do it! use the Query API to fetch all those and return them in the home page. 
     
