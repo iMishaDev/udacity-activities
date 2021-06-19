@@ -181,9 +181,9 @@ what we are intrested to have for each workout is the icon representing the work
     
     this is how our app gonna look like if we apply our changes + the competition feature which is exist in the `solution` branch! 
     ### the home page : 
-    ![Screen Shot 2021-06-19 at 2 03 47 PM](https://user-images.githubusercontent.com/12359091/122653271-46c57f00-d14c-11eb-850f-d40758b4ab5f.png)
+    ![Screen Shot 2021-06-19 at 2 24 21 PM](https://user-images.githubusercontent.com/12359091/122653273-488f4280-d14c-11eb-8849-e3be9e2e78df.png)
     
     
     
     ### starting a workout page
-    ![Screen Shot 2021-06-19 at 2 24 21 PM](https://user-images.githubusercontent.com/12359091/122653273-488f4280-d14c-11eb-8849-e3be9e2e78df.png)
+    ![Screen Shot 2021-06-19 at 2 03 47 PM](https://user-images.githubusercontent.com/12359091/122653271-46c57f00-d14c-11eb-850f-d40758b4ab5f.png)
