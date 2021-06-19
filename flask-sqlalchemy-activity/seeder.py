@@ -1,5 +1,5 @@
 from flask import Flask
-from models import User, Workout
+from models import User, Workout, Competition
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
@@ -42,11 +42,40 @@ user3 = User(name="John Doe Junior",
             excersiceGoal=70,
             standGoal=12)
 
+
 db.session.add(user)
+db.session.commit()
 db.session.add(user2)
+db.session.commit()
 db.session.add(user3)
 db.session.commit()
 
+comp1 = Competition(
+    competitior_first_id=user.id,
+    competitior_second_id=user2.id,
+    competitior_first_score=1000,
+    competitior_second_score=2000,
+    end_date='2021-09-12',
+    target=50000
+)
+
+
+comp2 = Competition(
+    competitior_first_id=user.id,
+    competitior_second_id=user3.id,
+    competitior_first_score=1000,
+    competitior_second_score=2000,
+    end_date='2021-09-12',
+    target=50000
+)
+
+
+db.session.add(comp1)
+db.session.commit()
+
+db.session.add(comp2)
+db.session.commit()
+
 
 
 workout1 = Workout(type="Running",
@@ -56,7 +85,7 @@ workout1 = Workout(type="Running",
                 activeCal=450,
                 heart=160,
                 created_at="2021-06-18",
-                
+                user_id=user.id
                 )
 
 
@@ -70,7 +99,7 @@ workout1 = Workout(type="Dance",
                 activeCal=130,
                 heart=140,
                 created_at="2021-06-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -83,7 +112,7 @@ workout1 = Workout(type="Cycling",
                 activeCal=850,
                 heart=180,
                 created_at="2021-06-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -97,7 +126,7 @@ workout1 = Workout(type="Running",
                 activeCal=450,
                 heart=160,
                 created_at="2021-05-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -111,7 +140,7 @@ workout1 = Workout(type="Dance",
                 activeCal=130,
                 heart=140,
                 created_at="2021-05-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -124,7 +153,7 @@ workout1 = Workout(type="Cycling",
                 activeCal=850,
                 heart=180,
                 created_at="2021-05-18",
-                
+                user_id=user.id
                 )
 db.session.add(workout1)
 db.session.commit()
@@ -136,7 +165,7 @@ workout1 = Workout(type="Cycling",
                 activeCal=800,
                 heart=180,
                 created_at="2021-04-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -150,7 +179,7 @@ workout1 = Workout(type="Cycling",
                 activeCal=1250,
                 heart=180,
                 created_at="2021-04-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -163,7 +192,7 @@ workout1 = Workout(type="Cycling",
                 activeCal=3000,
                 heart=180,
                 created_at="2021-04-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -177,7 +206,7 @@ workout1 = Workout(type="swim",
                 activeCal=850,
                 heart=180,
                 created_at="2021-03-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -190,7 +219,7 @@ workout1 = Workout(type="walking",
                 activeCal=850,
                 heart=180,
                 created_at="2021-03-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -204,7 +233,7 @@ workout1 = Workout(type="hiit",
                 activeCal=850,
                 heart=180,
                 created_at="2021-03-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -217,7 +246,7 @@ workout1 = Workout(type="running",
                 activeCal=850,
                 heart=180,
                 created_at="2021-03-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -231,7 +260,7 @@ workout1 = Workout(type="swim",
                 activeCal=850,
                 heart=180,
                 created_at="2021-01-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -245,7 +274,7 @@ workout1 = Workout(type="dance",
                 activeCal=850,
                 heart=180,
                 created_at="2021-01-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -259,7 +288,7 @@ workout1 = Workout(type="running",
                 activeCal=850,
                 heart=180,
                 created_at="2021-01-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
@@ -272,7 +301,7 @@ workout1 = Workout(type="walking",
                 activeCal=850,
                 heart=180,
                 created_at="2021-02-18",
-                
+                user_id=user.id
                 )
 db.session.add(workout1)
 db.session.commit()
@@ -285,7 +314,7 @@ workout1 = Workout(type="dance",
                 activeCal=850,
                 heart=180,
                 created_at="2021-05-18",
-                
+                user_id=user.id
                 )
 
 db.session.add(workout1)
