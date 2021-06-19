@@ -1,5 +1,6 @@
 
-## Udacity Activity Week.2
+
+## Udacity Activity Week.2 <img src="https://user-images.githubusercontent.com/12359091/122653726-44b0ef80-d14f-11eb-8849-1cd70624aae5.png" width="20">
 
 this project is built as activity in for the Full Stack Nanodegree. Students are required to complete the requirments to build the backend of this app using flask & SQLAlchemy. the focus of this activity is to give students more practicing of the SQLAlchemy ORM Qeury API. 
 
