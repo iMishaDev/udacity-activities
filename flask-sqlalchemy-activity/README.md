@@ -165,9 +165,9 @@ what we are intrested to have for each workout is the icon representing the work
 ### Note : altough we have users, there's no need to create a login/registraion system. it's a lightweight project but you have to stick to one user through the application and apply all the requiremnts on it
 
 ## requirments 
-[ ] user and workout models are not related, you need to add a one to many relationship between them and run the migration again to update it with  the new structure, don't forget to reflect this change on the seeder file. 
-[ ] the user can create a new workout, the frontend is ready to send the requiest and all you have to do is doing the actual creation in the database. 
-[ ] the user should be able to review the following in the home page : 
+- [ ] user and workout models are not related, you need to add a one to many relationship between them and run the migration again to update it with  the new structure, don't forget to reflect this change on the seeder file. 
+- [ ] the user can create a new workout, the frontend is ready to send the requiest and all you have to do is doing the actual creation in the database. 
+- [ ] the user should be able to review the following in the home page : 
     - his workouts history
     - one workout details through the `workout viewer`. ( meaning that it's alway gonna be a workout to review, if the user didn't pick one.. you return the first one in the database by default)
     - his competitions 
