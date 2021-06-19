@@ -7,13 +7,13 @@
                 <div class="w-50">
                     <ul>
                         <li>
-                            Move  <span class="move-text">  {{today.move}}/{{user.moveGoal}}CAL </span>
+                            Move  <span class="move-text">  {{dailyActivities['move']['cals']}}/{{user.moveGoal}}CAL </span>
                         </li>
                         <li>
-                            Excercise   <span class="excercise-text">{{today.excercise}}/{{user.excersiceGoal}}MIN </span> 
+                            Excercise   <span class="excercise-text">{{dailyActivities['excercise']['cals']}}/{{user.excersiceGoal}}MIN </span> 
                         </li>
                         <li>
-                            Stand <span class="stand-text"> {{today.stand}}/{{user.standGoal}}HRS </span> 
+                            Stand <span class="stand-text"> {{dailyActivities['stand']['cals']}}/{{user.standGoal}}HRS </span> 
                         </li>
                     </ul>
                 </div>
@@ -21,22 +21,22 @@
                 <div class="bars-section w-50">
                     <div class="bar-cont">
                         <div>
-                            <div class="activity-bar move" style="height:{{percentages['move']}}%"> </div>
-                            <div>{{percentages['move']}}%</div>
+                            <div class="activity-bar move" style="height:{{dailyActivities['move']['percentage']}}%"> </div>
+                            <div>{{dailyActivities['move']['percentage']}}%</div>
                         </div>
                         
                     </div>
                     <div class="bar-cont">
                         <div>
-                            <div class="activity-bar excercise" style="height:{{percentages['excercise']}}%"></div>
-                            <div>{{percentages['excercise']}}%</div>
+                            <div class="activity-bar excercise" style="height:{{dailyActivities['excercise']['percentage']}}%"></div>
+                            <div>{{dailyActivities['excercise']['percentage']}}%</div>
                         </div>
                     </div>
                 
                     <div class="bar-cont">
                         <div>
-                            <div class="activity-bar stand" style="height:{{percentages['stand']}}%"> </div>
-                            <div>{{percentages['stand']}}%</div>
+                            <div class="activity-bar stand" style="height:{{dailyActivities['stand']['percentage']}}%"> </div>
+                            <div>{{dailyActivities['stand']['percentage']}}%</div>
                         </div>
                     </div>
                     
@@ -62,11 +62,52 @@
                         <div>  Health Percentage   </div> <div> {{user.health}}% </div>
                     </li>
                     <li class="list-group-item">
-                        <div>  Daily Water Consumption   </div> <div> {{user.water}}LIT </div>
+                        <div>  Daily Water Consumption   </div> <div> {{user.water}} </div>
                     </li>
                 </ul>
 
             </div>
+            <div class="my-2">
+                <div> Competitions </div>
+                <ul class="workouts-history overflow-auto">
+                    {% for competition in competitions %}
+                    <li class="d-flex competition-container justify-content-between">
+                        <div class="competitior">
+                            <div class="d-felx justify-content-center">
+                                <img src="static/icons/shield.png" width="15" />
+                            </div>
+                            <div>
+                                {{ competition.competitior_first_name }}
+                            </div>
+                            <div class="score">
+                                {{ competition.competitior_first_score }}Cal
+                            </div>
+                        </div>
+                        <div class="competitior ">
+                            <div class="d-felx justify-content-center">
+                                <img src="static/icons/trophy.png" width="15" />
+                            </div>
+                            <div class="score">
+                                {{ competition.target }}Cal
+                            </div>
+                        </div>
+                        <div class="competitior">
+                            <div class="d-felx justify-content-center">
+                                <img src="static/icons/shield.png" width="15" />
+                            </div>
+                            <div>
+                                {{ competition.competitior_second_name }}
+                            </div> 
+                            <div class="score">
+                                {{ competition.competitior_first_score }}Cal
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+        
+            </div>
+            
         </div>
     <div class="col-md-8">
         <div class="activity-display">
