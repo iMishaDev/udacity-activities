@@ -1,11 +1,14 @@
-About Flask
+## Udacity Activity Week#1
+
+
+### About Flask
 
 Flask is a highly used Python micro Web Framework. It provides basic functionality to build web applications, like routing, request/response handling, etc. It's a "small" framework compared to other ones (like Django), but in many cases that's a great advantage.
 
 
 
 
-Requirements & Setup
+### Requirements & Setup
 
 
 Let us create our first Flask Application project by creating a folder :
@@ -301,7 +304,7 @@ flask run
 ```
 
 
-Requirements : 
+### Requirements : 
 
 
 go through al the TODOs in the app.py  file and implement it, which are the following : 
