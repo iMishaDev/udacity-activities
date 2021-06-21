@@ -313,3 +313,15 @@ go through al the TODOs in the app.py  file and implement it, which are the foll
 - [ ] create a POST request method to add a new book .
 - [ ] create a PUT request method to mark a book as read
 - [ ] create a DELETE request to delete a book from the list. 
+
+
+
+this is how it should look like after implmenting the requirments : 
+
+![Screen Shot 2021-06-21 at 9 50 53 AM](https://user-images.githubusercontent.com/12359091/122719023-517c3300-d276-11eb-9233-6edcbc154fe7.png)
+
+adding a book form: 
+
+![Screen Shot 2021-06-21 at 9 50 58 AM](https://user-images.githubusercontent.com/12359091/122719079-6062e580-d276-11eb-8a55-637d90cfa909.png)
+
+
