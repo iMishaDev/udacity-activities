@@ -15,8 +15,8 @@ body {
     width: 100%;
 }
 
-.start-workout-form{
-        width: 15%;
+.start-workout-form {
+    width: 15%;
 }
 
 .add-workout {
@@ -30,7 +30,7 @@ body {
     padding: auto;
 }
 
-.activity-overview ,
+.activity-overview,
 .workouts-list li {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
@@ -48,6 +48,7 @@ body {
     display: flex;
     align-items: flex-end;
 }
+
 .move {
     background-color: #F83480;
 }
@@ -86,8 +87,8 @@ body {
 
 .bars-section {
     display: flex;
-    height:250px;
-    margin-top:30px;
+    height: 250px;
+    margin-top: 30px;
     justify-content: space-between;
 }
 
@@ -112,7 +113,7 @@ body {
 
 
 .activity-date {
-    color:rgb(124, 124, 124);
+    color: rgb(124, 124, 124);
     margin-right: 20px;
     display: flex;
     align-items: center;
@@ -140,7 +141,7 @@ body {
 
 
 .profile-title {
-    color:white;
+    color: white;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -157,10 +158,39 @@ body {
     padding: 10px;
 }
 
+.score {
+    color: #D1B000;
+}
+
+.remove-btn {
+    cursor: pointer;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+.competition-container {
+    background: #d1b20011;
+    border-radius: 1rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.competitior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 120px;
+    width: 120px;
+}
+
 .list-group-item {
     display: flex !important;
     justify-content: space-between !important;
 }
+
 ul {
     padding: 0;
 }
@@ -173,9 +203,5 @@ li {
 }
 
 a {
-    text-decoration:underline !important;
-}
-
-.remove-btn {
-    cursor: pointer;
+    text-decoration: underline !important;
 }
