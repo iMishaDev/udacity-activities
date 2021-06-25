@@ -42,7 +42,7 @@ this activity is built using React Frawework, let's see how a Reaact app looks L
 +-- README.md
 ```
 
-What are we interested to look at is the `App.js` file and `components` folder.
+What are we interested to look at is the `App.js` file. the other files, if you know React you will be familiar with. 
 
 in `App.js` you will find many predeclared states, characters, selected character, films, speices, starships and vehicles. these made for you to store the data coming from the API. 
 
