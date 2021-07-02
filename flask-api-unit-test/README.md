@@ -214,6 +214,8 @@ in `tests.py` you will find an initial setup for creating test cases on these en
 - [ ] for every create, update, delete endpoint.. I want you to create two test cases, one showing a happy scenario and the other one showing an unhappy scenario.
 - [ ] PLUS+ in the enrollment GET, PUT and DELETE endpoints, I want you to load the data related to the course, student and professor. 
    
+to run your tests, run `python3 tests.py`
+
 This is How your postman collection looks like affter importing: 
 <img width="1646" alt="Screen Shot 2021-07-02 at 6 55 31 PM" src="https://user-images.githubusercontent.com/12359091/124300387-314a4f00-db67-11eb-8fc4-1737281345cb.png">
 
