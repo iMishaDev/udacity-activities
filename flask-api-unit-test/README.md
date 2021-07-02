@@ -211,9 +211,41 @@ in `tests.py` you will find an initial setup for creating test cases on these en
 
 
 ## requirments 
-- [ ] for every create, update, delete endpoint.. I want you to create two test cases, one showing a happy scenario and the other one showing an unhappy scenario.
+- [ ] test getting all courses has a success response with the following structure : 
+    ```
+        {
+            'success': True,
+            'courses': formatted_courses,
+            'total_courses': courses.total
+        }
+     ```
+- [ ] test getting all courses with an invalid page number has a `422` failure response with a message `unprocessable`.
+- [ ] test getting a course has a success response with the following structure : 
+    ```
+        {
+            'success': True,
+            'course': courseData,
+        }
+     ```
+- [ ] test getting a course with an invalid id has a `404` failure response with a message `resource not found`.
+- [ ] test posting a course with a valid data has a success reponse with the following structure: 
+  ```
+    {
+         'success': True,
+          'course': courseData,
+    }
+   ```
+- test posting a course with an invalid data or missing ones, make sure it returns `500` response. 
+- [ ] test deleting a course with a valid id has a success reponse with the following structure: 
+  ```
+    {
+         'success': True,
+          'course': course_id,
+    }
+   ```
+- test deleting a course with an invalid id has a `404` reponse with a message `resource not found`. 
 - [ ] PLUS+ in the enrollment GET, PUT and DELETE endpoints, I want you to load the data related to the course, student and professor. 
-   
+- [ ] test the other endpoints the same way courses are tested with handling additional failure schenarios if possible. 
 to run your tests, run `python3 tests.py`
 
 This is How your postman collection looks like affter importing: 
