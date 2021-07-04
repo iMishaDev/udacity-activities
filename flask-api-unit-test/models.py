@@ -151,10 +151,10 @@ class Course(db.Model):
 
     def format(self):
         return {
+            'created_at': str(self.created_at),
             'id': self.id,
             'name': self.name,
-            'semester': self.semester,
-            'created_at': self.created_at,
+            'semester': self.semester
         }
 
 
